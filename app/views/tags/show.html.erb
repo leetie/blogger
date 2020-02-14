@@ -1,5 +1,7 @@
 <h1>Articles Tagged with <%= @tag.name %></h1>
+<% if logged_in? %>
 <h2><%= link_to "Delete Tag", tag_path(@tag), method: :delete, data: {confirm:"Are you sure?"} %></h2>
+<% end %>
 <ul>
   <% @tag.articles.each do |article| %>
     <li><%= link_to article.title, article_path(article) %></li>
